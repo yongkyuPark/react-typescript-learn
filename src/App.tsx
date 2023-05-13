@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes, Link} from "react-router-dom"
+import MyButton from './pages/Mybutton';
+import HedyImage from './pages/Hedyimage';
+import ShoppingList from './pages/ShoppingList';
+import CountButton from './pages/CountButton';
+import TogetherButton from './pages/TogetherButton';
+import Home from "./pages/Home";
+import QuickStartMain from "./pages/QuickStartMain";
+
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <Link to="/">HOME</Link> | {" "}
+        <Link to="/quickStartMain">QuickStartMain</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/quickStartMain" element={<QuickStartMain/>}/>
+      </Routes>
+      {/* <MyButton/>
+      <HedyImage/>
+      <ShoppingList/>
+      <CountButton/>
+      <TogetherButton/> */}
     </div>
   );
 }
