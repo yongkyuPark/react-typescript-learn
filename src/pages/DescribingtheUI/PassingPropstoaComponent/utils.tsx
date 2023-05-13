@@ -1,8 +1,11 @@
-export function getImageUrl(imageId: string, size = 's') {
+const getImageUrl = (imageId: string, size = 's') => {
     return (
-      'https://i.imgur.com/' +
-      imageId +
-      size +
-      '.jpg'
+        'https://i.imgur.com/' +
+        imageId +
+        size +
+        '.jpg'
     );
-  }
+} 
+
+export default getImageUrl;
+

@@ -1,8 +1,8 @@
 interface ClockProps {
     time: Date;
-    }
+}
 
-export default function Clock({ time } : ClockProps) {
+const Clock = ({time} : ClockProps) => {
     let hours = time.getHours();
     let className: string;
     if (hours >= 0 && hours <= 6) {
@@ -15,5 +15,6 @@ export default function Clock({ time } : ClockProps) {
         {time.toLocaleTimeString()}
       </h1>
     );
-  }
-  
+}
+
+export default Clock;

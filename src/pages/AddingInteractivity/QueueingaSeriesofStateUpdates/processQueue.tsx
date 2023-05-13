@@ -1,4 +1,4 @@
-export function getFinalState(baseState: any, queue: any) {
+const getFinalState = (baseState: any, queue: any) => {
     let finalState = baseState;
   
     for (let update of queue) {
@@ -12,5 +12,7 @@ export function getFinalState(baseState: any, queue: any) {
     }
   
     return finalState;
-  }
+}
+
+export default getFinalState;
   

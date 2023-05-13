@@ -4,9 +4,9 @@ const poem = {
       'Erase again, and then',
       'A poppy blooms.'
     ]
-  };
-  
-  export default function Poem() {
+};
+
+const Poem = () => {
     let output: JSX.Element[] = [];
   
     // Fill the output array
@@ -28,5 +28,7 @@ const poem = {
         {output}
       </article>
     );
-  }
+}
+  
+export default Poem;
   

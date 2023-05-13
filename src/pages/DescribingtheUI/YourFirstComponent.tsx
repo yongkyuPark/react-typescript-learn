@@ -26,6 +26,6 @@ const HedyImage = () => {
         </>
       </div>
     );
-  }
+}
 
-  export default HedyImage;
+export default HedyImage;

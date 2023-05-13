@@ -2,7 +2,7 @@ interface DrinkProps{
     name : string;
 }
 
-function Drink({ name } : DrinkProps) {
+const Drink = ({name} : DrinkProps) => {
     let part, caffeine, age;
     if (name === 'tea') {
       part = 'leaf';
@@ -26,14 +26,16 @@ function Drink({ name } : DrinkProps) {
         </dl>
       </section>
     );
-  }
-  
-  export default function DrinkList() {
+}
+
+const DrinkList = () => {
     return (
-      <div>
+        <div>
         <Drink name="tea" />
         <Drink name="coffee" />
-      </div>
+        </div>
     );
-  }
+}
+
+export default DrinkList;
   

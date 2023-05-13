@@ -10,5 +10,7 @@ const Clock: React.FC<ClockProps> = (props) => {
         {props.time}
       </h1>
     );
-  };
-  
+};
+
+export default Clock;
+

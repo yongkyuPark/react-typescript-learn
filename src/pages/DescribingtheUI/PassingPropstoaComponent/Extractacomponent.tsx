@@ -1,4 +1,4 @@
-import { getImageUrl } from './utils';
+import getImageUrl from './utils';
 
 interface Person {
   imageId: string;
@@ -13,8 +13,8 @@ interface ProfileProps {
   imageSize?: number; // 있을수도 있고 없을수도 있다 -> ? 사용
 }
 
-function Profile({ person, imageSize = 70 }: ProfileProps) {
-  const imageSrc = getImageUrl(person.imageId);
+const Profile = ({person, imageSize = 70} : ProfileProps) => {
+    const imageSrc = getImageUrl(person.imageId);
 
   return (
     <section className="profile">
@@ -43,33 +43,35 @@ function Profile({ person, imageSize = 70 }: ProfileProps) {
   );
 }
 
-export default function Gallery() {
-  return (
-    <div>
-      <h1>Notable Scientists</h1>
-      <Profile
-        person={{
-          imageId: 'szV5sdG',
-          name: 'Maria Skłodowska-Curie',
-          profession: 'physicist and chemist',
-          discovery: 'polonium (chemical element)',
-          awards: [
-            'Nobel Prize in Physics',
-            'Nobel Prize in Chemistry',
-            'Davy Medal',
-            'Matteucci Medal',
-          ],
-        }}
-      />
-      <Profile
-        person={{
-          imageId: 'YfeOqp2',
-          name: 'Katsuko Saruhashi',
-          profession: 'geochemist',
-          discovery: 'a method for measuring carbon dioxide in seawater',
-          awards: ['Miyake Prize for geochemistry', 'Tanaka Prize'],
-        }}
-      />
-    </div>
-  );
+const Gallery = () => {
+    return (
+        <div>
+          <h1>Notable Scientists</h1>
+          <Profile
+            person={{
+              imageId: 'szV5sdG',
+              name: 'Maria Skłodowska-Curie',
+              profession: 'physicist and chemist',
+              discovery: 'polonium (chemical element)',
+              awards: [
+                'Nobel Prize in Physics',
+                'Nobel Prize in Chemistry',
+                'Davy Medal',
+                'Matteucci Medal',
+              ],
+            }}
+          />
+          <Profile
+            person={{
+              imageId: 'YfeOqp2',
+              name: 'Katsuko Saruhashi',
+              profession: 'geochemist',
+              discovery: 'a method for measuring carbon dioxide in seawater',
+              awards: ['Miyake Prize for geochemistry', 'Tanaka Prize'],
+            }}
+          />
+        </div>
+      );
 }
+
+export default Gallery;
