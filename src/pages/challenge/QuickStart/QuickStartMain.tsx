@@ -1,8 +1,6 @@
-import React from "react";
-import {Route, Routes, Link} from "react-router-dom"
 import MyButton from "./Mybutton";
 import HedyImage from './Hedyimage';
-import ShoppingList from './ShoppingList';
+import ShoppingList from "./ShoppingList";
 import CountButton from './CountButton';
 import TogetherButton from './TogetherButton';
 
