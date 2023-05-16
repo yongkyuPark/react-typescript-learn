@@ -4,10 +4,11 @@ import React, { useState, useEffect } from "react"
 
 
 const Event = () => {
-    const { user } = useAuth()
+    const { user,providerData } = useAuth()
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true)
     console.log(user)
+    console.log(providerData);
 
 
     useEffect(() => {
@@ -20,7 +21,7 @@ const Event = () => {
 
     return (
         <div>
-            <h1>Event 화면 입니다.</h1>
+            <h1>{user && providerData && providerData.email}</h1>
         </div> 
     )
 }
