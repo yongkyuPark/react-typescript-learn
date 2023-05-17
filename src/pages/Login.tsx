@@ -6,12 +6,6 @@ import { GoogleAuthProvider,
 import { auth } from "../Firebase";
 import {useAuth} from "../context/authContext";
 import {useLocation, useNavigate} from "react-router-dom";
-import { clickOptions } from "@testing-library/user-event/dist/click";
-
-interface UserData {
-    // Define the shape of user data here
-    
-}
 
 const Login = () => {
 
@@ -19,10 +13,9 @@ const Login = () => {
     const queryParams = new URLSearchParams(search)
     const returnUrl = queryParams.get('returnUrl') || '/'
     const navigate = useNavigate()
-    const [userData, setUserData] = useState<UserData | null>(null);
     const {user} = useAuth()
-    console.log('user',user)
-
+    console.log(returnUrl)
+    
     useEffect(() => {
         if(user) {
             navigate(returnUrl)

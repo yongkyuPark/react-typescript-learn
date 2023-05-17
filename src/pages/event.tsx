@@ -7,9 +7,7 @@ const Event = () => {
     const { user,providerData } = useAuth()
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true)
-    console.log(user)
-    console.log(providerData);
-
+    
 
     useEffect(() => {
         if (!user) {
@@ -17,7 +15,7 @@ const Event = () => {
         } else {
             setLoading(false)
         }
-    }, [user, navigate, loading])
+    }, [user, loading, navigate])
 
     return (
         <div>

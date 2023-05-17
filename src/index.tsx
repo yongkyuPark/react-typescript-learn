@@ -5,9 +5,10 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App'
 import Home from './pages/Home';
-import Event from './pages/event';
+import Event from './pages/Event';
 import Login from './pages/Login';
 import { AuthProvider,useAuth  } from "./context/authContext";
+import AuthPage from './pages/AuthPage';
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
         element: <App/>,
         children: [
             { path: "/", element: <Home/> },
-            { path: "/event", element: <AuthProvider><Event /></AuthProvider> },
+            { path: "/event", element: <AuthPage><Event /></AuthPage> },
             { path: "/login", element: <Login/> },
         ]
     },
