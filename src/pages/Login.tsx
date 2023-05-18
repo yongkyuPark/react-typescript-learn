@@ -34,25 +34,30 @@ const Login = () => {
         const provider = new GithubAuthProvider();
         signInWithPopup(auth, provider)
         .then(function(){
-            alert("성공")
+            console.log("성공")
         })
         .catch(function(e){
             fetchSignInMethodsForEmail(auth,e.customData.email)
             .then((result)=>{
                 if(result[0] === "google.com"){
-                    const testVal = new GoogleAuthProvider()
-                    testVal.setCustomParameters({login_hint: e.customData.email});
-                    signInWithPopup(auth,testVal)
-                    .then(function(result){
-                        console.log(result);
-                        // signInWithCredential(auth,result.credential).then()
-                    })
-                    .catch(function(e){
-                        console.log(e.code);
-                        if(e.code === "auth/popup-blocked"){
-                            alert("팝업이 차단되었습니다. 차단을 풀어주세요.")
-                        }
-                    })
+
+                    if (window.confirm("깃허브 계정과 구글 계정이 같아 구글 계정으로 로그인됩니다. 로그인 하시겠습니까?")) {
+                        const testVal = new GoogleAuthProvider()
+                        testVal.setCustomParameters({login_hint: e.customData.email});
+                        signInWithPopup(auth,testVal)
+                        .then(function(result){
+                            console.log(result);
+                            // signInWithCredential(auth,result.credential).then()
+                        })
+                        .catch(function(e){
+                            console.log(e.code);
+                            if(e.code === "auth/popup-blocked"){
+                                alert("팝업이 차단되었습니다. 차단을 풀어주세요.")
+                            }
+                        })
+                    } else {
+                        
+                    }
                 }
             })
             .catch(function(e){

@@ -17,9 +17,12 @@ const Event = () => {
         }
     }, [user, loading, navigate])
 
+    console.log(providerData)
+
     return (
         <div>
-            <h1>{user && providerData && providerData.email}</h1>
+            <h1>{user && providerData && providerData.providerId}</h1>
+            <h2>{user && providerData && providerData.email}</h2>
         </div> 
     )
 }
