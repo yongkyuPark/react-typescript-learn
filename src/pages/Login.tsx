@@ -72,7 +72,7 @@ const Login = () => {
     return (
         <div>
             <h1>Login 화면 입니다.</h1>
-            <button onClick={handleGoogleLogin}>Googoe Login</button>
+            <button onClick={handleGoogleLogin}>Google Login</button> | {"  "}
             <button onClick={handleGitHubLogin}>GitHub Login</button>
         </div> 
     ) 
