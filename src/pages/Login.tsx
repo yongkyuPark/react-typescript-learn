@@ -31,7 +31,7 @@ const Login = () => {
     }
 
     function handleGitHubLogin() {
-        const provider = new GithubAuthProvider();
+        let provider = new GithubAuthProvider();
         signInWithPopup(auth, provider)
         .then(function(){
             console.log("성공")
@@ -43,9 +43,9 @@ const Login = () => {
             .then((result)=>{
                 if(result[0] === "google.com"){
                     if (window.confirm("깃허브 계정과 구글 계정이 같아 구글 계정으로 로그인됩니다. 로그인 하시겠습니까?")) {
-                        const testVal = new GoogleAuthProvider()
-                        testVal.setCustomParameters({login_hint: e.customData.email});
-                        signInWithPopup(auth,testVal)
+                        provider = new GoogleAuthProvider()
+                        provider.setCustomParameters({login_hint: e.customData.email});
+                        signInWithPopup(auth,provider)
                         .then(function(result){
                             console.log(result);
                             // signInWithCredential(auth,result.credential).then()
