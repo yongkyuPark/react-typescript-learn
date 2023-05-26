@@ -25,6 +25,8 @@ export default function Nav() {
             <nav>
                 <Link to="/">Home</Link> | {"  "}
                 <Link to="/event">Event</Link> | {"  "}
+                <Link to="/gridTest">GridTest</Link> | {"  "}
+                <Link to="/reactTableTest">ReactTableTest</Link> | {"  "}
                 {!user && <Link to="/login">Login</Link>}
                 {user && <Link to="" onClick={handleLogout}>Logout</Link>}
             </nav>

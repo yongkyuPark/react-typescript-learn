@@ -9,6 +9,10 @@ import Event from './pages/Event';
 import Login from './pages/Login';
 import { AuthProvider,useAuth  } from "./context/authContext";
 import AuthPage from './pages/AuthPage';
+import GridTest from './pages/AgGrid';
+import GridExample from './pages/gridTest';
+import ReactTableTest from './pages/ReactTable';
+
 
 const router = createBrowserRouter([
     {
@@ -17,6 +21,8 @@ const router = createBrowserRouter([
         children: [
             { path: "/", element: <Home/> },
             { path: "/event", element: <AuthPage><Event /></AuthPage> },
+            { path: "/gridTest", element: <GridTest/>},
+            { path: "/reactTableTest", element: <ReactTableTest/>},
             { path: "/login", element: <Login/> },
         ]
     },
